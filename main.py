@@ -7,12 +7,12 @@ from selenium.webdriver.common.by import By
 import urllib.request
 
 def crawling(arg):
-    driver = webdriver.Chrome(executable_path='C:/Users/koust/PNU/chromedriver_win32/chromedriver.exe')
+    driver = webdriver.Chrome(executable_path='chrome driver 절대 경로 입력') #chromedriver.exe 까지 입력해주어야함
     driver.implicitly_wait(3)
 
     driver.get("https://www.google.co.kr/imghp?hl=ko&ogbl")
-    if not os.path.isdir("C:/Users/koust/PNU/sample/" + arg):
-        os.makedirs("C:/Users/koust/PNU/sample/"+ arg)
+    if not os.path.isdir("사진 저장을 원하는 디렉토리 절대 경로 입력" + arg):
+        os.makedirs("사진 저장을 원하는 디렉토리 절대 경로 입력"+ arg)
     search = arg
     element = driver.find_element('name', 'q')
     element.send_keys(search)
